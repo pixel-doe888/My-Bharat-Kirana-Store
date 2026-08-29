@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Kirana Store — Freshness, Delivered.</title>
+<meta name="description" content="Bharat Kirana Store — your trusted neighbourhood grocery store in Devgadh Baria, Gujarat.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--green:#087f3f;--dark:#071b11;--lime:#caff61;--cream:#f7f8f2;--muted:#647168;--card:#fff;--line:#e4e9e3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--dark)}
+header{position:sticky;top:0;z-index:50;background:#071b11ee;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff18;color:#fff}
+.nav{max-width:1250px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:900;letter-spacing:-.7px;font-size:21px;white-space:nowrap}.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--lime);display:grid;place-items:center;color:var(--dark);font-size:22px}
+nav{margin-left:auto;display:flex;gap:24px}nav a{color:#dce9e0;text-decoration:none;font-size:14px;font-weight:600}nav a:hover{color:var(--lime)}
+.order-btn{border:0;background:var(--lime);color:var(--dark);font-weight:800;border-radius:11px;padding:11px 15px;cursor:pointer;white-space:nowrap}
+.hero{max-width:1250px;margin:auto;padding:78px 24px 65px;display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#e4f5d5;color:#17612e;padding:8px 12px;border-radius:99px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}.dot{width:7px;height:7px;background:#24a148;border-radius:50%;box-shadow:0 0 0 5px #24a14822}
+h1{font-size:clamp(48px,7vw,82px);line-height:.96;letter-spacing:-4px;margin:18px 0 20px}h1 span{color:var(--green)}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.primary,.secondary{padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:800;cursor:pointer}.primary{background:var(--green);color:#fff}.secondary{border:1px solid #cfd8d0;color:var(--dark);background:#fff}
+.hero-visual{min-height:420px;border-radius:32px;background:linear-gradient(145deg,#0b8b48,#064b2a);position:relative;overflow:hidden;box-shadow:0 25px 70px #06351e33}.hero-visual:before,.hero-visual:after{content:"";position:absolute;border-radius:50%;background:#caff6122}.hero-visual:before{width:330px;height:330px;right:-90px;top:-100px}.hero-visual:after{width:250px;height:250px;left:-100px;bottom:-100px}
+.grocery-orbit{position:absolute;inset:40px;display:grid;place-items:center}.basket{font-size:150px;filter:drop-shadow(0 20px 20px #0004);animation:float 4s ease-in-out infinite}.float-item{position:absolute;background:#ffffff16;border:1px solid #ffffff2e;backdrop-filter:blur(8px);width:82px;height:82px;border-radius:22px;display:grid;place-items:center;font-size:39px}.i1{top:20px;left:30px}.i2{top:65px;right:20px}.i3{bottom:35px;left:55px}.i4{bottom:20px;right:60px}@keyframes float{50%{transform:translateY(-12px)}}
+.stats{max-width:1250px;margin:-15px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.stat b{font-size:24px}.stat span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+section{max-width:1250px;margin:auto;padding:78px 24px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.section-head h2{font-size:40px;letter-spacing:-2px;margin:0}.section-head p{color:var(--muted);max-width:550px;margin:5px 0 0}
+.categories{display:flex;gap:9px;overflow:auto;padding:3px 0 14px}.cat{border:1px solid #d8e0d9;background:#fff;color:#344139;padding:10px 15px;border-radius:99px;font-weight:700;cursor:pointer;white-space:nowrap}.cat.active,.cat:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:12px;overflow:hidden;transition:.25s;position:relative}.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #07371b12}.product-img{height:185px;border-radius:14px;overflow:hidden;background:#f2f5ef;position:relative}.product-img img{width:100%;height:100%;object-fit:cover}.tag{position:absolute;top:10px;left:10px;background:#fff;padding:6px 9px;border-radius:8px;font-size:10px;font-weight:900}.card-body{padding:12px 4px 4px}.brand-name{font-size:11px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.6px}.card h3{font-size:16px;margin:5px 0}.meta{color:var(--muted);font-size:12px}.buy-row{display:flex;justify-content:space-between;align-items:center;margin-top:13px}.price{font-weight:900;font-size:18px}.add{border:0;background:var(--dark);color:#fff;border-radius:9px;padding:9px 12px;font-weight:800;cursor:pointer}.add:hover{background:var(--green)}
+.brands{background:var(--dark);color:#fff;max-width:none}.brands-inner{max-width:1250px;margin:auto;padding:70px 24px}.brand-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:30px}.brand-pill{border:1px solid #ffffff1d;border-radius:13px;padding:17px 8px;text-align:center;font-weight:800;color:#dce8df;background:#ffffff08}
+.order-panel{background:linear-gradient(135deg,#e9f8dc,#fff);border-radius:28px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px;border:1px solid #dbe8d8}.order-list{background:#fff;border-radius:17px;padding:18px;min-height:170px}.order-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #edf0ed;font-size:13px}.send{margin-top:15px;width:100%;padding:14px;border:0;border-radius:11px;background:var(--green);color:#fff;font-weight:900;cursor:pointer}.empty{color:var(--muted);text-align:center;padding:45px 10px}
+.contact{background:#f0f5ef}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:23px}.contact-card .icon{font-size:27px}.contact-card h3{margin:10px 0 5px}.contact-card p{color:var(--muted);line-height:1.6}.contact-card a{color:var(--green);font-weight:700}
+footer{background:#04130b;color:#b8c9bd;padding:25px;text-align:center;font-size:12px}
+@media(max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}.brand-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;padding-top:48px}.hero-visual{min-height:320px}.stats{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.order-panel,.contact-grid{grid-template-columns:1fr}.section-head{display:block}.section-head h2{font-size:32px}.brand-grid{grid-template-columns:repeat(2,1fr)}h1{letter-spacing:-2px}}
+@media(max-width:460px){.products{grid-template-columns:1fr}.product-img{height:210px}.nav{padding:12px 15px}.hero,section{padding-left:15px;padding-right:15px}.stats{padding:0 15px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav">
+<a class="brand" href="#home"><span class="brand-mark">🛒</span> BHARAT KIRANA</a>
+<nav><a href="#products">Shop</a><a href="#brands">Brands</a><a href="#order">My Order</a><a href="#contact">Contact</a></nav>
+<button class="order-btn" onclick="document.getElementById('order').scrollIntoView()">✉️ My Order <span id="count">0</span></button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div>
+<div class="badge"><span class="dot"></span> Local grocery • Devgadh Baria</div>
+<h1>Groceries.<br><span>Made Simple.</span></h1>
+<p>A modern way to shop your everyday essentials from Bharat Kirana Store. Choose your products, build your order, and send it directly to us by email.</p>
+<div class="hero-actions"><a class="primary" href="#products">Explore Groceries →</a><a class="secondary" href="#contact">Find Our Store</a></div>
+</div>
+<div class="hero-visual"><div class="grocery-orbit"><div class="float-item i1">🌶️</div><div class="float-item i2">🧃</div><div class="float-item i3">🥨</div><div class="float-item i4">🧼</div><div class="basket">🛒</div></div></div>
+</section>
+
+<div class="stats"><div class="stat"><b>Fresh Essentials</b><span>Daily grocery products</span></div><div class="stat"><b>Trusted Brands</b><span>Popular household names</span></div><div class="stat"><b>Easy Ordering</b><span>Send your order by email</span></div></div>
+
+<section id="products">
+<div class="section-head"><div><h2>Shop the essentials.</h2><p>Browse by category and add products to your order.</p></div></div>
+<div class="categories">
+<button class="cat active" onclick="filterProducts('all',this)">All</button><button class="cat" onclick="filterProducts('staples',this)">Staples</button><button class="cat" onclick="filterProducts('namkeen',this)">Namkeen</button><button class="cat" onclick="filterProducts('biscuits',this)">Biscuits</button><button class="cat" onclick="filterProducts('spices',this)">Spices</button><button class="cat" onclick="filterProducts('oil',this)">Oil</button><button class="cat" onclick="filterProducts('beverages',this)">Beverages</button><button class="cat" onclick="filterProducts('dishwash',this)">Dishwash</button><button class="cat" onclick="filterProducts('detergent',this)">Detergent</button>
+</div>
+<div class="products" id="productGrid"></div>
+</section>
+
+<section class="brands" id="brands">
+<div class="brands-inner"><div class="section-head"><div><h2>Brands you know.</h2><p style="color:#aebeb3">A selection of familiar brands across your everyday grocery needs.</p></div></div>
+<div class="brand-grid"><div class="brand-pill">BADSHAH</div><div class="brand-pill">VASANT</div><div class="brand-pill">GANESH</div><div class="brand-pill">RANI</div><div class="brand-pill">REAL</div><div class="brand-pill">BRITANNIA</div><div class="brand-pill">GOPAL</div><div class="brand-pill">VIM</div><div class="brand-pill">PRIL</div><div class="brand-pill">SURF EXCEL</div><div class="brand-pill">ARIEL</div><div class="brand-pill">RIN</div><div class="brand-pill">BALAJI</div><div class="brand-pill">HALDIRAM'S</div></div></div>
+</section>
+
+<section id="order">
+<div class="section-head"><div><h2>Your order.</h2><p>Review your selected items, then send the order directly to Bharat Kirana Store.</p></div></div>
+<div class="order-panel"><div><h3>Ready to send?</h3><p style="color:var(--muted);line-height:1.7">Your email app will open with the product list, quantities and estimated total already filled in. Just press <b>Send</b>.</p><p><b>Email:</b> aranpurwala@gmail.com</p></div><div class="order-list"><div id="orderItems" class="empty">No products added yet.<br>Start shopping above.</div><button class="send" onclick="sendOrder()">✉️ Send Order by Email</button></div></div>
+</section>
+
+<section class="contact" id="contact">
+<div class="section-head"><div><h2>Come say hello.</h2><p>Visit Bharat Kirana Store in Devgadh Baria or contact us by email.</p></div></div>
+<div class="contact-grid"><div class="contact-card"><div class="icon">📍</div><h3>Store Address</h3><p>Ek Bati Bazaar, Tower Road,<br>Devgadh Baria, Gujarat – 389380</p></div><div class="contact-card"><div class="icon">✉️</div><h3>Email</h3><p><a href="mailto:aranpurwala@gmail.com">aranpurwala@gmail.com</a></p></div><div class="contact-card"><div class="icon">🕐</div><h3>Opening Hours</h3><p>Every day<br><b>7:30 AM – 8:00 PM</b></p></div></div>
+</section>
+</main>
+
+<footer>© 2026 Bharat Kirana Store • Ek Bati Bazaar, Tower Road, Devgadh Baria, Gujarat – 389380</footer>
+
+<script>
+const products=[
+["Basmati Rice","🍚","staples",120,"India Gate","https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=700&q=85"],
+["Wheat Flour","🌾","staples",52,"Aashirvaad","https://images.unsplash.com/photo-1628773822503-930a7eaecf80?auto=format&fit=crop&w=700&q=85"],
+["Toor Dal","🫘","staples",120,"Tata Sampann","https://images.unsplash.com/photo-1604908177522-040a5a5d7c1c?auto=format&fit=crop&w=700&q=85"],
+["Rani Cooking Oil","🫗","oil",150,"Rani","https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=700&q=85"],
+["Gopal Bhujia","🥨","namkeen",55,"Gopal","https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=700&q=85"],
+["Gopal Sev","🥨","namkeen",50,"Gopal","https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=700&q=85"],
+["Balaji Wafers","🥔","namkeen",20,"Balaji","https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=700&q=85"],
+["Haldiram's Namkeen","🥨","namkeen",65,"Haldiram's","https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=700&q=85"],
+["Britannia Biscuits","🍪","biscuits",30,"Britannia","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=700&q=85"],
+["Badshah Garam Masala","🌶️","spices",65,"Badshah","https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=700&q=85"],
+["Badshah Chaat Masala","🌶️","spices",55,"Badshah","https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=700&q=85"],
+["Vasant Masala","🌶️","spices",50,"Vasant","https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=700&q=85"],
+["Ganesh Masala","🌶️","spices",50,"Ganesh","https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=700&q=85"],
+["Real Fruit Juice","🧃","beverages",45,"Real","https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=85"],
+["Dishwash Liquid","🧽","dishwash",75,"Vim","https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=700&q=85"],
+["Dishwash Gel","🧴","dishwash",95,"Pril","https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=700&q=85"],
+["Detergent Powder","🧺","detergent",95,"Surf Excel","https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85"],
+["Detergent Powder","🧺","detergent",85,"Ariel","https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=85"],
+["Detergent Bar","🧼","detergent",25,"Rin","https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=700&q=85"],
+["Salt","🧂","staples",25,"Tata Salt","https://images.unsplash.com/photo-1518110925495-5fe2c7f6d3d1?auto=format&fit=crop&w=700&q=85"]
+];
+let cart=[];
+const names={staples:"Staples",namkeen:"Namkeen",biscuits:"Biscuits",spices:"Spices",oil:"Cooking Oil",beverages:"Beverages",dishwash:"Dishwash",detergent:"Detergent"};
+function render(list=products){document.getElementById("productGrid").innerHTML=list.map((p)=>`<article class="card"><div class="product-img"><span class="tag">${p[4]}</span><img src="${p[5]}" alt="${p[0]}" onerror="this.style.display='none'"></div><div class="card-body"><div class="brand-name">${p[4]}</div><h3>${p[0]}</h3><div class="meta">${names[p[2]]} • Everyday essential</div><div class="buy-row"><div class="price">₹${p[3]}</div><button class="add" onclick="add(${products.indexOf(p)})">Add +</button></div></div></article>`).join("")}
+function add(i){let x=cart.find(a=>a.i===i);if(x)x.q++;else cart.push({i,q:1});updateOrder()}
+function updateOrder(){document.getElementById("count").textContent=cart.reduce((s,x)=>s+x.q,0);const box=document.getElementById("orderItems");if(!cart.length){box.className="empty";box.innerHTML="No products added yet.<br>Start shopping above.";return}box.className="";box.innerHTML=cart.map(x=>{let p=products[x.i];return `<div class="order-line"><span>${p[0]} × ${x.q}</span><b>₹${p[3]*x.q}</b></div>`}).join("")}
+function sendOrder(){if(!cart.length){alert("Please add products to your order first.");return}let total=0,lines=[];cart.forEach(x=>{let p=products[x.i],sub=p[3]*x.q;total+=sub;lines.push(`${p[0]} — ${p[4]} — Qty: ${x.q} — ₹${sub}`)});let subject=encodeURIComponent("New Order - Bharat Kirana Store");let body=encodeURIComponent("Hello Bharat Kirana Store,\n\nI would like to order:\n\n"+lines.join("\n")+`\n\nEstimated total: ₹${total}\n\nPlease confirm availability and the final order total.\n\nThank you.`);window.location.href=`mailto:aranpurwala@gmail.com?subject=${subject}&body=${body}`}
+function filterProducts(cat,btn){document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));btn.classList.add("active");render(cat==="all"?products:products.filter(p=>p[2]===cat))}
+render();updateOrder();
+</script>
+</body>
+</html>

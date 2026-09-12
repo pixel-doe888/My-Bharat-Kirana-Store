@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050806">
+
+<title>Bharat Kirana Store — System Maintenance</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050806;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(74,222,128,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(74,222,128,.035) 1px,transparent 1px);
+    background-size:45px 45px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(34,197,94,.16),transparent 28%),
+        radial-gradient(circle at 85% 80%,rgba(132,204,22,.12),transparent 30%);
+    pointer-events:none;
+}
+
+/* ================= SCAN LINE ================= */
+
+.scanline{
+    position:fixed;
+    left:0;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #4ade80,
+        transparent
+    );
+    box-shadow:0 0 20px #4ade80;
+    opacity:.4;
+    animation:scan 6s linear infinite;
+    z-index:5;
+}
+
+@keyframes scan{
+    0%{top:-5%}
+    100%{top:105%}
+}
+
+/* ================= MAIN ================= */
+
+.wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    position:relative;
+    z-index:2;
+}
+
+.panel{
+    width:min(950px,100%);
+    position:relative;
+    padding:2px;
+    border-radius:32px;
+    background:linear-gradient(
+        135deg,
+        rgba(74,222,128,.55),
+        rgba(255,255,255,.04),
+        rgba(132,204,22,.4)
+    );
+    box-shadow:
+        0 0 100px rgba(34,197,94,.12),
+        0 30px 100px rgba(0,0,0,.7);
+}
+
+.inner{
+    border-radius:30px;
+    padding:55px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10,20,13,.97),
+            rgba(4,10,7,.98)
+        );
+    position:relative;
+    overflow:hidden;
+}
+
+/* ================= CORNERS ================= */
+
+.corner{
+    position:absolute;
+    width:35px;
+    height:35px;
+    border-color:#4ade80;
+    opacity:.7;
+}
+
+.tl{
+    top:20px;
+    left:20px;
+    border-top:2px solid;
+    border-left:2px solid;
+}
+
+.tr{
+    top:20px;
+    right:20px;
+    border-top:2px solid;
+    border-right:2px solid;
+}
+
+.bl{
+    bottom:20px;
+    left:20px;
+    border-bottom:2px solid;
+    border-left:2px solid;
+}
+
+.br{
+    bottom:20px;
+    right:20px;
+    border-bottom:2px solid;
+    border-right:2px solid;
+}
+
+/* ================= TOP BAR ================= */
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:45px;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#78917f;
+}
+
+.live-status{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.status-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#facc15;
+    box-shadow:0 0 15px #facc15;
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:.3}
+}
+
+/* ================= LOGO ================= */
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.logo-ring{
+    width:115px;
+    height:115px;
+    border-radius:50%;
+    border:1px solid rgba(74,222,128,.3);
+    display:grid;
+    place-items:center;
+    position:relative;
+    box-shadow:
+        0 0 40px rgba(74,222,128,.08),
+        inset 0 0 30px rgba(74,222,128,.05);
+}
+
+.logo-ring::before{
+    content:"";
+    position:absolute;
+    inset:9px;
+    border-radius:50%;
+    border:1px dashed rgba(134,239,172,.35);
+    animation:rotate 12s linear infinite;
+}
+
+.logo{
+    width:72px;
+    height:72px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#22c55e,#84cc16);
+    display:grid;
+    place-items:center;
+    font-size:38px;
+    box-shadow:0 0 40px rgba(34,197,94,.25);
+}
+
+@keyframes rotate{
+    to{transform:rotate(360deg)}
+}
+
+/* ================= TEXT ================= */
+
+.system{
+    text-align:center;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#4ade80;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h1{
+    text-align:center;
+    font-size:clamp(42px,7vw,78px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:25px;
+}
+
+h1 span{
+    background:linear-gradient(90deg,#4ade80,#bef264);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.description{
+    max-width:650px;
+    margin:auto;
+    text-align:center;
+    color:#8da095;
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress-section{
+    margin:40px auto 30px;
+    max-width:650px;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-size:11px;
+    color:#73877a;
+    letter-spacing:1px;
+}
+
+.progress-bar{
+    height:7px;
+    border-radius:20px;
+    background:#142119;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.progress-fill{
+    height:100%;
+    width:73%;
+    background:linear-gradient(
+        90deg,
+        #16a34a,
+        #4ade80,
+        #bef264
+    );
+    box-shadow:0 0 20px rgba(74,222,128,.45);
+    animation:progress 3s ease-in-out infinite alternate;
+}
+
+@keyframes progress{
+    from{width:67%}
+    to{width:79%}
+}
+
+/* ================= INFO GRID ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:35px;
+}
+
+.info{
+    padding:18px;
+    border:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.025);
+    border-radius:16px;
+}
+
+.info small{
+    display:block;
+    color:#53675a;
+    font-size:9px;
+    letter-spacing:1.5px;
+    margin-bottom:7px;
+}
+
+.info strong{
+    color:#b5c4b9;
+    font-size:12px;
+}
+
+/* ================= STORE ================= */
+
+.store-info{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.06);
+    text-align:center;
+}
+
+.store-name{
+    color:#86efac;
+    font-weight:bold;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.address{
+    margin-top:8px;
+    color:#66786d;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#3e4d43;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+/* ================= FLOATING SYMBOLS ================= */
+
+.float{
+    position:fixed;
+    font-size:28px;
+    opacity:.08;
+    animation:drift 10s ease-in-out infinite;
+    z-index:1;
+}
+
+.f1{left:8%;top:20%}
+.f2{right:10%;top:25%;animation-delay:2s}
+.f3{left:15%;bottom:18%;animation-delay:4s}
+.f4{right:17%;bottom:15%;animation-delay:6s}
+
+@keyframes drift{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-25px) rotate(8deg);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        overflow:auto;
+    }
+
+    .wrapper{
+        padding:15px;
+    }
+
+    .inner{
+        padding:40px 22px;
+    }
+
+    .top{
+        margin-bottom:35px;
+    }
+
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .logo-ring{
+        width:95px;
+        height:95px;
+    }
+
+    .logo{
+        width:62px;
+        height:62px;
+        font-size:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scanline"></div>
+
+<!-- Background floating grocery symbols -->
+<div class="float f1">🛒</div>
+<div class="float f2">🥫</div>
+<div class="float f3">🛍️</div>
+<div class="float f4">📦</div>
+
+<div class="wrapper">
+
+    <div class="panel">
+
+        <div class="inner">
+
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+
+            <!-- TOP SYSTEM BAR -->
+
+            <div class="top">
+
+                <div>
+                    BHARAT KIRANA / SYSTEM
+                </div>
+
+                <div class="live-status">
+                    <span class="status-dot"></span>
+                    MAINTENANCE MODE
+                </div>
+
+            </div>
+
+            <!-- LOGO -->
+
+            <div class="logo-area">
+
+                <div class="logo-ring">
+
+                    <div class="logo">
+                        🛒
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MAIN MESSAGE -->
+
+            <div class="system">
+                WEBSITE TEMPORARILY OFFLINE
+            </div>
+
+            <h1>
+                SYSTEM<br>
+                <span>UPDATING.</span>
+            </h1>
+
+            <p class="description">
+                Bharat Kirana Store is currently undergoing a
+                scheduled website upgrade. We're refreshing the
+                system to make your next shopping experience
+                faster, smoother and better.
+            </p>
+
+            <!-- PROGRESS -->
+
+            <div class="progress-section">
+
+                <div class="progress-top">
+
+                    <span>SYSTEM UPDATE</span>
+
+                    <span>IN PROGRESS</span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+            </div>
+
+            <!-- INFO -->
+
+            <div class="info-grid">
+
+                <div class="info">
+
+                    <small>STORE STATUS</small>
+
+                    <strong>Temporarily Offline</strong>
+
+                </div>
+
+                <div class="info">
+
+                    <small>STORE HOURS</small>
+
+                    <strong>7:30 AM — 8:00 PM</strong>
+
+                </div>
+
+                <div class="info">
+
+                    <small>LOCATION</small>
+
+                    <strong>Devgadh Baria</strong>
+
+                </div>
+
+            </div>
+
+            <!-- STORE DETAILS -->
+
+            <div class="store-info">
+
+                <div class="store-name">
+                    BHARAT KIRANA STORE
+                </div>
+
+                <div class="address">
+                    Ek Bati Bazaar, Tower Road,
+                    Devgadh Baria, Gujarat – 389380
+                </div>
+
+            </div>
+
+            <div class="footer">
+                PLEASE CHECK BACK SOON • THANK YOU FOR YOUR PATIENCE
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
